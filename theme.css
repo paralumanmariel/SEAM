@@ -1,0 +1,261 @@
+body{
+	background-image: url(images/intersection1.png);
+	width: 100%;	
+	height: 100%;	
+}
+
+#outerfilm{
+	padding: 10px 25px;
+	width: 100%;
+	height: 100%;
+}
+
+#box{
+	float:left;
+	width:100%;
+	padding:20px;
+}
+
+#navbar{
+	background-color: #7B1111;
+	border-bottom: solid 2px #ffffff;
+}
+
+.nav-link:hover{
+	color: #ffffff;
+	text-shadow: 2px 3px 6px #ffffff;
+}
+
+.footer{
+	background-color: #7B1111;
+	border-top: solid 6px #ffffff;
+	width: 100%;
+	padding: 50px;
+	float: left;
+	color: #ffffff;
+}
+
+.footer > #footbox > a{
+	color: #ffffff;
+}
+
+#footbox{
+	border-right: 2px solid #ffffff;
+}
+
+.nav-link{
+	color: #ffffff;
+}
+
+li a{
+	font-size: 12pt;
+}
+
+#positivebutton, .dropdown-item, thead tr th{
+	color: #7B1111;
+}
+
+#negativebutton{
+	color: #ffffff;
+	background-color: #7B1111;
+}
+
+#standardbox, #columnbox{
+	background-color: rgba(255, 255, 255, 0.85);
+	border: solid 2px #ffffff;
+	border-radius:5px;
+	margin-bottom: 20px;
+}
+
+#columnbox:hover, #columnbox:active{
+	background-color: rgba(255, 255, 255, 0.95);
+}
+
+#blankbox{
+	width: 100%;
+	float: left;
+	text-align: center;
+	margin-top: 20px;
+}
+
+#clearbox{
+	float: left;
+	padding: 20px 40px;
+}
+
+#isolatebox{
+	border: solid 2px #5a0c0c;
+	padding: 20px 40px;
+	border-radius:5px;
+	float: left;
+}
+
+#greybox{
+	width:100%;
+	border-radius:5px;
+	float: left;
+	margin-bottom: 20px;
+	background-color:#f2f2f2;
+	padding: 15px;
+}
+
+#shadebox{
+	padding: 20px 40px;
+	border-radius:5px;
+	float: left;
+	background-color: #5a0c0c;
+}
+
+#activeshadebox:hover{
+	background-color: #5a0c0c;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+#activebox:active{
+	background-color: #ffffff;
+	color: #ffffff;
+	font-weight: normal;
+	border: 2px solid #7B1111;
+}
+
+#ed:hover{
+	visibility: visible;
+}
+
+#activeshadebox{
+	padding: 10px 20px;
+	border-radius:5px;
+	float: left;
+	background-color: #7B1111;
+	color: #ffffff;
+	font-size: 14pt;
+	text-align: center;
+}
+
+#section{
+	background-color: #5a0c0c;
+	color: #ffffff;
+	padding: 10px;
+	text-align: center;
+}
+
+.form-group {
+	float: left;
+	width: 100%;
+}
+
+.form-group label, .form-group input {
+	float: left;
+}
+
+form{
+	max-width: 750px;
+	margin: auto;
+}
+
+hr{
+	border: solid 1px #7B1111;
+	width: 100%;
+}
+
+#tableinput{
+	padding: 0px;
+}
+
+#mini{
+	border: solid 1px #cccccc;
+	border-radius: 1px;
+	width: 80%;
+	align-self: center;
+}
+
+#coating{
+	float: left;
+	width: calc(100% - 10px);
+	margin: 0px 5px 5px 5px;
+}
+
+#coating1{
+	float: left;
+	width: calc(100% - 10px);
+	margin: 0px 5px 5px 5px;
+	display:none;
+}
+
+#line{
+	float: left;
+	width: 100%;
+	padding-bottom: 5px;
+}
+
+#line1{
+	float: left;
+	width: 100%;
+	padding-bottom: 7px;
+}
+
+::-webkit-input-placeholder {
+  transition: opacity 250ms ease-in-out;
+}
+:focus::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+:-ms-input-placeholder {
+  transition: opacity 250ms ease-in-out;
+}
+:focus:-ms-input-placeholder {
+  opacity: 0.5;
+}
+::-moz-placeholder {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+}
+:focus::-moz-placeholder {
+  opacity: 0.5;
+}
+:-moz-placeholder {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+}
+:focus:-moz-placeholder {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1100px) {
+    #hide {
+			display: none;
+    }
+    #column{
+			min-width: 100%;
+			margin: 0px;
+    }
+    #columnbox{
+	    	margin-bottom: 30px;
+    }
+    .hide-md {
+			display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #hide-md {
+			display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #hide-sm, #table_dep, #table_ben {
+			display: none !important;
+    }
+
+    label {
+			max-width: 100%;    
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #hide-ss {
+			display: none;
+    }
+}
