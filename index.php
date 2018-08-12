@@ -1,16 +1,7 @@
 <?php
 	session_start();
-	error_reporting(0);
-
-	//Server Credentials
-	$MyServerName = "localhost";
-	$MyUserName = "root";
-	$MyPassword = "";
-
-	//Database
-	$MyDBName = 'SEAMSA';
-
-	$MyConnection = mysqli_connect($MyServer, $MyUserName, $MyPassword, $MyDBName);
+	require_once 'class.user.php';
+	$user_home = new USER();
 ?>
 
 <!DOCTYPE html>
@@ -28,65 +19,26 @@
 	<!-- Body -->
 	<body>
 		<body>
-		<!-- Header -->
-		<div class="bg-secondary p-1">
-			<center>
-				<div class="col-md-2">
-	    			<img class="img-fluid" src="seam.png">
-	    		</div>
-				<div class="col-md-5">
-	    			<img class="img-fluid" src="seamsalogo.png">
-	    		</div>
-	    		<h5></h5>
-	    		<h4 style="color: #ffffff">The Official Scholarly Journal of the Southeast Asian Media Studies Association</h4>
-			</center>
-	    </div>
-
-	    <!-- Navigation Bar -->
-	    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-	    	<div class="container">
-
-	    		<!-- Logo -->
-	    		<a class="navbar-brand" href="index.php" action="index.php">
-	    			<b>Home</b>
-	    		</a>
-	    		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    			<span class="navbar-toggler-icon"></span>
-	    		</button>
-
-	    		<a class="navbar-brand" href="index.php">
-	    			<b>Archives</b>
-	    		</a>
-	    		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    			<span class="navbar-toggler-icon"></span>
-	    		</button>
-
-	    		<a class="navbar-brand" href="aboutUs.php">
-	    			<b>About Us</b>
-	    		</a>
-	    		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    			<span class="navbar-toggler-icon"></span>
-	    		</button>
-
-	    		<!-- Links -->
-	    		<div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
-	    			<ul class="navbar-nav">
-	  	    				<li class="nav-item">
-	    					<a class="nav-link" href="login.php#tologin">Login</a>
-			          	</li>
-			          	<li class="nav-item">
-	    					<a class="nav-link" href="login.php#toregister">Register</a>
-			          	</li>
-	          		</ul>
-	       		</div>
-	      	</div>
-    	</nav>
+		<?php
+			include('header.php');
+		?>
 
     	<!-- Home Page Contents-->
 	<div class="col-md-5" style="float: right">
-		<p class="change_link"> 
+		<?php
+			if($user_home->is_logged_in()){
+				echo '<p class="change_link"> 
 			<a href="submission.php" style="color: #ffffff ">Make a Submission</a>
-		</p>
+		</p>';
+			}else{
+				echo '<p class="change_link"> 
+			<a href="" style="color: #ffffff ">Login to make a submission</a>
+		</p>';
+			}
+		?>
+		<!-- <p class="change_link"> 
+			<a href="submission.php" style="color: #ffffff ">Make a Submission</a>
+		</p> -->
 	</div>
 	
 		<div class="col-md-8">

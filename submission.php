@@ -1,16 +1,7 @@
 <?php
 	session_start();
-	error_reporting(0);
-
-	//Server Credentials
-	$MyServerName = "localhost";
-	$MyUserName = "root";
-	$MyPassword = "";
-
-	//Database
-	$MyDBName = 'SEAMSA';
-
-	$MyConnection = mysqli_connect($MyServer, $MyUserName, $MyPassword, $MyDBName);
+	require_once 'class.user.php';
+	$user_home = new USER();
 ?>
 
 <!DOCTYPE html>
@@ -28,67 +19,31 @@
 	<!-- Body -->
 	<body>
 		<body>
-		<!-- Header -->
-		<div class="bg-secondary p-1">
-			<center>
-				<div class="col-md-2">
-	    			<img class="img-fluid" src="seam.png">
-	    		</div>
-				<div class="col-md-5">
-	    			<img class="img-fluid" src="seamsalogo.png">
-	    		</div>
-	    		<h5></h5>
-	    		<h4 style="color: #ffffff">The Official Scholarly Journal of the Southeast Asian Media Studies Association</h4>
-			</center>
-	    </div>
-
-	    <!-- Navigation Bar -->
-	    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-	    	<div class="container">
-
-	    		<!-- Logo -->
-	    		<a class="navbar-brand" href="index.php" action="index.php">
-	    			<b>Home</b>
-	    		</a>
-	    		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    			<span class="navbar-toggler-icon"></span>
-	    		</button>
-
-	    		<a class="navbar-brand" href="index.php">
-	    			<b>Archives</b>
-	    		</a>
-	    		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    			<span class="navbar-toggler-icon"></span>
-	    		</button>
-
-	    		<a class="navbar-brand" href="aboutUs.php">
-	    			<b>About Us</b>
-	    		</a>
-	    		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    			<span class="navbar-toggler-icon"></span>
-	    		</button>
-
-	    		<!-- Links -->
-	    		<div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
-	    			<ul class="navbar-nav">
-	  	    				<li class="nav-item">
-	    					<a class="nav-link" href="login.php#tologin">Login</a>
-			          	</li>
-			          	<li class="nav-item">
-	    					<a class="nav-link" href="login.php#toregister">Register</a>
-			          	</li>
-	          		</ul>
-	       		</div>
-	      	</div>
-    	</nav>
+		<?php
+			include('header.php');
+		?>
 
     	<!-- Home Page Contents-->
-	<div class="col-md-5" style="float: right">
-		<p class="change_link"> 
-			<a href="submission.php" style="color: #ffffff ">Make a Submission</a>
-		</p>
-	</div>
-	
+		<div class="col-md-4" style="float: right;">
+			<div style="text-align:center;">
+				<hr/>
+						<h3 style="margin: 0px; padding:10px 0px 0px 0px">Submission of Manuscript</h3>
+					</div>
+					<div id="clearbox" style="padding:5px;padding-right:50px; width:100%; float:left; color:#595959;text-align: justify">
+						Manuscripts submitted to the Southeast Asian Media Studies journal should not be previously published nor being considered for publication in another journal or any academic publication.
+					</div>
+					<link rel="stylesheet" type="text/css" href="css/file-upload.css" />
+						<script src="js/file-upload.js"></script>
+						<script type="text/javascript">
+						   	 $(document).ready(function() {
+						        $('.file-upload').file_upload();
+						    });
+						</script>
+						<form class="form-horizontal" action="upload.php" method="post" enctype="multipart/form-data">
+						    <label class="file-upload btn"><input type="file" name="fileToUpload[]" id="fileToUpload"multiple="nultiple"></label>
+						    <input type="submit" class="btn btn-primary btn-lg" value="Submit .doc or .docx files" name="submit">
+						</form>
+		</div>
 		<div class="col-md-8">
 			<div id="columnbox" style="float:left; width:100%;">
 				<div style="float:left; width:100%; padding:10px 20px 0px 100px;">
@@ -160,34 +115,8 @@
 						The manuscripts should adhere to the prescribed referencing format of the American Psychological Association (APA), 6th edition.
 						<br></br>
 					</div>
-					<div style="text-align:center;">
-						<h3 style="margin: 0px; padding:10px 0px 0px 0px">Submission of Manuscript</h3>
-					</div>
-					<div id="clearbox" style="padding:5px;padding-right:50px; width:100%; float:left; color:#595959;text-align: justify">
-						Manuscripts submitted to the Southeast Asian Media Studies journal should not be previously published nor being considered for publication in another journal or any academic publication.
-					</div>
-					<br></br>
-					<div style="padding-left: 300px;">
-					<link rel="stylesheet" type="text/css" href="css/file-upload.css" />
-						<script src="js/file-upload.js"></script>
-						<script type="text/javascript">
-						   	 $(document).ready(function() {
-						        $('.file-upload').file_upload();
-						    });
-						</script>
-						<form class="form-horizontal">
-						    <label class="file-upload btn"><input type="file" multiple></label>
-						</form>
-					</div>
-					<div style="padding-left:175px">
-						<p class="change_link"> 
-							<a href="submission.php" style="color: #ffffff ">Submit File</a>
-						</p>
-					</div>
-					<br></br>
-					<br></br>
-					<br></br>
-					<br></br>
+					
+					
 				</div>
 				</div>
 			</div>
