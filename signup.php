@@ -69,7 +69,7 @@ if(isset($_POST['btn-signup']))
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Signup | Coding Cage</title>
+    <title>Registration - Southeast Asian Media Studies</title>
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
@@ -81,15 +81,18 @@ if(isset($_POST['btn-signup']))
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
   <script type="text/javascript">
   	var check = function() {
-  if (document.getElementById('password').value ==
-    document.getElementById('confirm_password').value) {
+      document.getElementById('submitbtn').disable=true;
+  if(document.getElementById('confirm_password').value=='' || document.getElementById('password').value==''){
+    document.getElementById('message').innerHTML = '';
+    document.getElementById('submitbtn').disable=true;
+  }else if (document.getElementById('password').value == document.getElementById('confirm_password').value) {
     document.getElementById('message').style.color = 'green';
     document.getElementById('message').innerHTML = 'Password matched';
-  } else if(document.getElementById('confirm_password').value==''){
-  	document.getElementById('message').innerHTML = '';
+    document.getElementById('submitbtn').disable=false;
   }else {
     document.getElementById('message').style.color = 'red';
     document.getElementById('message').innerHTML = 'Password not matching';
+    document.getElementById('submitbtn').disable=true;
   }
 }
 
@@ -113,13 +116,13 @@ if(isset($_POST['btn-signup']))
 				<?php if(isset($msg)) echo $msg;  ?>
       <form class="form-signin" method="post">
         <h2 class="form-signin-heading">Sign Up</h2><hr />
-        Username: <input type="text" class="input-block-level" placeholder="Username" name="txtuname" required />
+        Full Name: <input type="text" class="input-block-level" placeholder="Last Name, First Name M.I." name="txtuname" required />
         Email: <input type="email" class="input-block-level" placeholder="Email address" name="txtemail" required />
         Password: <input type="password" class="input-block-level" placeholder="Password" name="txtpass" id="password"   onkeyup='check();' required />
         Confirm Password: <input type="password" id="confirm_password" class="input-block-level" placeholder="Confirm Password" name="txtpassconfirm"   onkeyup='check();' required />
         <span id='message'></span>
      	<hr />
-        <button class="btn btn-large btn-primary" type="submit" name="btn-signup">Sign Up</button>
+        <button class="btn btn-large btn-primary" id="submitbtn" type="submit" name="btn-signup">Sign Up</button>
         <hr/>
          <div style="text-align: right;">Already a member?
         <a href="login.php" style="" class="btn btn-large">Login In</a></div>

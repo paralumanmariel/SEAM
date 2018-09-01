@@ -118,10 +118,10 @@ class USER
 		$mail->Host       = "smtp.gmail.com";      
 		$mail->Port       = 465;             
 		$mail->AddAddress($email);
-		$mail->Username="pateuriku@gmail.com";  
-		$mail->Password="ispangibabu";            
-		$mail->SetFrom('pateuriku@gmail.com','SEAMS');
-		$mail->AddReplyTo("pateuriku@gmail.com","SEAMS");
+		$mail->Username="seamsmailhost@gmail.com";  
+		$mail->Password="s3@msp@ss";            
+		$mail->SetFrom('seamsmailhost@gmail.com','SEAMS Official');
+		$mail->AddReplyTo("seamsmailhost@gmail.com","SEAMS Official");
 		$mail->Subject    = $subject;
 		$mail->MsgHTML($message);
 		$mail->Send();
