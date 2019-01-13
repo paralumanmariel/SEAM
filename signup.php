@@ -41,10 +41,10 @@ if(isset($_POST['btn-signup']))
 			$message = "					
 						Hello $uname,
 						<br /><br />
-						Welcome to Coding Cage!<br/>
+						Welcome to South East Asian Media Studies Scholarly Journal<br/>
 						To complete your registration  please , just click following link<br/>
 						<br /><br />
-						<a href='http://localhost/SEAMS/verify.php?id=$id&code=$code'>Click HERE to Activate :)</a>
+						<a href='http://localhost/SEAMS/verify.php?id=$id&code=$code'>Click here to Activate</a>
 						<br /><br />
 						Thanks,";
 						

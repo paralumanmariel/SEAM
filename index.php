@@ -32,7 +32,7 @@
 		</p>';
 			}else{
 				echo '<p class="change_link"> 
-			<a href="login.php" style="color: #ffffff ">Login to make a submission</a>
+			<a href="login.php" style="color: #ffffff;padding:20px 60px;">Login to make a submission</a>
 		</p>';
 			}
 		?>
