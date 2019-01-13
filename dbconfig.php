@@ -3,7 +3,7 @@ class Database
 {
      
     private $host = "localhost";
-    private $db_name = "dbtest";
+    private $db_name = "seamsdb";
     private $username = "root";
     private $password = "";
     public $conn;
